@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-jybax2%9m=+xc-t$t^m#lov(0wb3e-f_!x%8%yd7q&6(*=c*l!
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost'
+    'localhost',
+    'tickets-app-backend.onrender.com'
 ]
 
 
