@@ -9,4 +9,3 @@ gunicorn==19.7.1
 pytz==2022.7.1
 sqlparse==0.4.3
 tzdata==2022.7
-psycopg2-binary
