@@ -36,7 +36,6 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'render.apps.RenderConfig',
     'rest_framework.authtoken',
     'dj_rest_auth',
     'corsheaders',
