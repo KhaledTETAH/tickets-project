@@ -17,9 +17,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tickets_app/v1/', include('apps.tickets_app.urls')),
     path('dj-rest-auth/', include('dj_rest_auth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
+
+urlpatterns += staticfiles_urlpatterns

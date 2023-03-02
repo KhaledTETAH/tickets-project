@@ -85,6 +85,10 @@ WSGI_APPLICATION = 'tickets_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#DATABASE_URL = os.getenv('DATABASE_URL')
+#DATABASES = {
+#    'default': dj_database_url.config(),
+#}
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
