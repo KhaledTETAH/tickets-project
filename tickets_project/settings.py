@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,8 +29,7 @@ SECRET_KEY = 'django-insecure-jybax2%9m=+xc-t$t^m#lov(0wb3e-f_!x%8%yd7q&6(*=c*l!
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
-    'tickets-app-backend.onrender.com'
+    "*"
 ]
 
 
@@ -85,10 +86,7 @@ WSGI_APPLICATION = 'tickets_project.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 #DATABASES = {
