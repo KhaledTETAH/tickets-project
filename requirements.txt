@@ -1,3 +1,4 @@
+pip==23.0.1
 asgiref==3.6.0
 dj-database-url==1.2.0
 dj-rest-auth==3.0.0
