@@ -23,9 +23,6 @@ class TicketViewSet(viewsets.ModelViewSet):
     queryset = Ticket.objects.all().order_by('-id')
     serializer_class = TicketSerializer
     
-#class TicketAssignmentViewSet(viewsets.ModelViewSet):
-#    queryset = TicketAssignment.objects.all()
-#    serializer_class = TicketAssignmentSerializer
     
 class NotificationViewSet(viewsets.ModelViewSet):
     queryset = Notification.objects.all()

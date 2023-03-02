@@ -7,7 +7,6 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'ticketStatuses', TicketStatusViewSet)
 router.register(r'tickets', TicketViewSet)
-#router.register(r'thicketAssignments', TicketAssignmentViewSet)
 router.register(r'notifications', NotificationViewSet)
 
 urlpatterns = [

@@ -19,13 +19,6 @@ class Ticket(models.Model):
     remarks = models.TextField(null=True, blank=True)
     status = models.ForeignKey(TicketStatus, related_name='ticket_status', on_delete=models.CASCADE)
     
-#class TicketAssignment(models.Model):
-#    id = models.AutoField(primary_key=True, editable=False)
-#    ticket = models.OneToOneField(Ticket, on_delete=models.CASCADE, related_name='ticket')
-#    assigned_to = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, related_name='assigned_to')
-#    assigned_on = models.DateTimeField(default=timezone.now)
-#    status = models.ForeignKey(TicketStatus, null=True, on_delete=models.SET_NULL, related_name='assigned_status')
-
 class Notification(models.Model):
     id = models.AutoField(primary_key=True)
     time = models.DateTimeField(default=timezone.now)

@@ -19,11 +19,6 @@ class TicketSerializer(serializers.ModelSerializer):
         model = Ticket
         fields = '__all__'
         
-#class TicketAssignmentSerializer(serializers.ModelSerializer):
-#   class Meta:
-#        model = TicketAssignment
-#        fields = '__all__'
-        
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
