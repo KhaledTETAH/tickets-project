@@ -53,15 +53,16 @@ def get_notification_by_user(request, userId):
 def download_file(request):
     file_path = request.query_params.get('file_path')
     print(file_path)
-    file_path = file_path.replace("%2F","/")
     pattern = "media/uploads"
     start_index = file_path.find(pattern)  # Find the starting index of the pattern
     if start_index != -1:  # If the pattern is found
         substring = file_path[start_index:]  # Extract substring from the starting index
         print(substring)  # Output: world
+        return FileResponse(open(substring, 'rb'))
     else:
         print("Pattern not found")
-    return FileResponse(open(substring, 'rb'))
+        return Response("PAttern not found")
+    
 
 
 @api_view(['GET'])
