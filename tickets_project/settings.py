@@ -26,10 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jybax2%9m=+xc-t$t^m#lov(0wb3e-f_!x%8%yd7q&6(*=c*l!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    "*"
+    'localhost',
+    'tickets-app-backend.onrender.com'
 ]
 
 
@@ -85,12 +86,14 @@ WSGI_APPLICATION = 'tickets_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASE_URL = os.getenv('DATABASE_URL')
+#DATABASE_URL = 
 #DATABASES = {
 #    'default': dj_database_url.config(),
-#}
+#
+#os.environ.setdefault('DATABASE_URL', 'postgres://tickets_db_user:9lZGTWxI4vEuTb3ZPCMUvOOBFoJrXRKq@dpg-cg0f4r2k728q52gaq6g0-a.oregon-postgres.render.com/tickets_db')
+
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 #DATABASES = {
@@ -121,7 +124,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images)SSS
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
