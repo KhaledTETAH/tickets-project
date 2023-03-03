@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tickets_app/v1/', include('apps.tickets_app.urls')),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
-     re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
