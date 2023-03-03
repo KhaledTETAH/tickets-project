@@ -53,6 +53,7 @@ def get_notification_by_user(request, userId):
 def download_file(request):
     file_path = request.query_params.get('file_path')
     print(file_path)
+    file_path = file_path.replace("%2F","/")
     pattern = "media/uploads"
     start_index = file_path.find(pattern)  # Find the starting index of the pattern
     if start_index != -1:  # If the pattern is found
