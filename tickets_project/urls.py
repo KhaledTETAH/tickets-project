@@ -25,4 +25,4 @@ urlpatterns = [
     path('dj-rest-auth/', include('dj_rest_auth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
 
-#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
