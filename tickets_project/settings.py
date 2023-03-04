@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jybax2%9m=+xc-t$t^m#lov(0wb3e-f_!x%8%yd7q&6(*=c*l!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -86,22 +86,12 @@ WSGI_APPLICATION = 'tickets_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASE_URL = 
-#DATABASES = {
-#    'default': dj_database_url.config(),
-#
-#os.environ.setdefault('DATABASE_URL', 'postgres://tickets_db_user:9lZGTWxI4vEuTb3ZPCMUvOOBFoJrXRKq@dpg-cg0f4r2k728q52gaq6g0-a.oregon-postgres.render.com/tickets_db')
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
 
 
 # Password validation
@@ -127,9 +117,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)SSS
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
